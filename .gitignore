@@ -26,12 +26,12 @@ SupportClient/*.sw?
 
 # for backend
 # Python-generated files
-support_client_backend/__pycache__/
-support_client_backend/*.py[oc]
-support_client_backend/build/
-support_client_backend/dist/
-support_client_backend/wheels/
-support_client_backend/*.egg-info
+agent_backend/__pycache__/
+agent_backend/*.py[oc]
+agent_backend/build/
+agent_backend/dist/
+agent_backend/wheels/
+agent_backend/*.egg-info
 
 # Virtual environments
-support_client_backend/.venv
+agent_backend/.venv
