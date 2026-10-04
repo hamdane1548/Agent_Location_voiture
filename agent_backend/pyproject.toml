@@ -8,7 +8,11 @@ dependencies = [
     "dotenv>=0.9.9",
     "fastapi>=0.142.2",
     "jupyter>=1.1.1",
+    "ipykernel>=7.4.0",
+    "loguru>=0.7.3",
     "notebook>=7.6.3",
     "openai>=3.24.0",
     "pydantic>=2.13.5",
+    "pydantic-settings>=2.15.0",
+    "pypdf2>=3.0.1",
 ]

@@ -35,3 +35,4 @@ agent_backend/*.egg-info
 
 # Virtual environments
 agent_backend/.venv
+agent_backend/.env

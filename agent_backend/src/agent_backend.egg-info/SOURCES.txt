@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/Settings.py
+src/__init__.py
+src/Embeddings/Embedding.py
+src/Embeddings/__init__.py
+src/agent/__init.py
+src/agent_backend.egg-info/PKG-INFO
+src/agent_backend.egg-info/SOURCES.txt
+src/agent_backend.egg-info/dependency_links.txt
+src/agent_backend.egg-info/requires.txt
+src/agent_backend.egg-info/top_level.txt
+src/notebook/__init__.py
+src/test/Setting_test.py
+src/test/__init__.py
