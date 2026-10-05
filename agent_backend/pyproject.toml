@@ -6,7 +6,9 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "chromadb>=1.5.9",
+    "dotenv>=0.9.9",
     "fastapi>=0.142.2",
+    "jupyter>=1.1.1",
     "ipykernel>=7.4.0",
     "loguru>=0.7.3",
     "mistralai>=3.0.0",
