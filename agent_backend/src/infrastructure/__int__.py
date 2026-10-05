@@ -1,3 +1,3 @@
-from .chromedb import ChromaConnection
+from .chromedb import chromaconnection
 
-__all__ = ['ChromaConnection']
+__all__ = ['chromaconnection']

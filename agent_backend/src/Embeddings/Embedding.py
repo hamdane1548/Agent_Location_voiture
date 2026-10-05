@@ -8,9 +8,9 @@ from loguru import logger
 from PyPDF2 import PdfReader
 from PyPDF2 import PdfReader
 from mistralai.client import Mistral
+import numpy as np
 from sentence_transformers import SentenceTransformer
-
-from agent_backend.src.infrastructure.chromedb import Chroma, ChromaConnection
+from Services.ChromaDBServices import ChromaBbServices
 class RAG_Embedding:
     #Constructure that recieve the files pdf support client to chank the pdf
     def __new__(cls,file : UploadFile |None = None , file_path: str | Path | None = None)->PdfReader:
@@ -76,15 +76,13 @@ class RAG_Embedding:
          )
          logger.info(f"the embedding is ")
     @staticmethod
-    def embedding_using_transfromes_model_encoding(chunks)->list:
+    def embedding_using_transfromes_model_encoding(chunks)->np.ndarray:
          model = SentenceTransformer("all-MiniLM-L6-v2")
-         embedding = model.encode(chunks).tolist()
+         embedding = model.encode(chunks)
          logger.info(f"the type of the embedding is {type(embedding)}")
          logger.info(f"the content files is {embedding.shape}")
          return embedding
-    
     @staticmethod
     def SaveInVectorDb(embeddings):
-         vectorStore  = Chroma()
-         collection = vectorStore
+         ChromaBbServices()
          

@@ -9,3 +9,6 @@ services:
       - ANONYMIZED_TELEMETRY=FALSE
     volumes:
       - chroma_data:/chroma/chroma
+volumes:
+  chroma_data:
+   
