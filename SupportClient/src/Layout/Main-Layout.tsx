@@ -1,20 +1,25 @@
 import { Outlet } from "react-router";
 import Header from "../Components/ui/Header";
+import Footer from "../Components/ui/Footer";
 
 const Main_Layout = () => {
-   return (
-    <>
-    <header>
-      <Header></Header>
-    </header>
-    <main>
-      <Outlet></Outlet>
-    </main>
-    <footer>
+  return (
+    <div className="min-h-screen flex flex-col">
       
-    </footer>
-    </>
+      <header>
+        <Header />
+      </header>
 
-   )
-}
-export default Main_Layout
+      <main className="flex-1 flex items-center justify-center">
+        <Outlet />
+      </main>
+
+      <footer>
+        <Footer />
+      </footer>
+
+    </div>
+  );
+};
+
+export default Main_Layout;
