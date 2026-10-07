@@ -1,4 +1,5 @@
 
+import hashlib
 import uuid
 
 from loguru import logger
@@ -24,7 +25,7 @@ class ChromaBbServices:
             logger.catch(f"error when make the connection between the vectore store {error}")
             raise
     @classmethod
-    def savetheVector(cls,collection_name :str , id_client : int , name_cleint : str , copmany_name : str,vector: np.ndarray):
+    def savetheVector(cls,collection_name :str,content:str , id_client : int , name_cleint : str , copmany_name : str,vector: np.ndarray):
         try:
             if cls._instances is None:
                raise ConnectionError(
@@ -35,9 +36,20 @@ class ChromaBbServices:
                 raise ConnectionError(
                     "Failed to load the collection"
                 )
-            list_chunk = list(map(lambda i  : "chunk ${i}" ,vector))
+            vector_id = hashlib.sha256(
+            content.encode("utf-8")
+            ).hexdigest()
+
+            existing = collection.get(
+            ids=[vector_id]
+             )
+            if existing["ids"]:
+                print("This content already exists")
+                return
             collection.add(
-                  ids = list(map(lambda i  : "chunk ${i}" ,vector))
+                  ids = hashlib.sha256(content.encode()).hexdigest(),
+                  embedding = vector,
+                  metadata = [{"source": "pdf"}, {"source": "txt"} , {"client":id_client},{"name_client":name_cleint},{"company_name":copmany_name}]
             )
         except Exception as error:
             logger.catch(f"the vector save in the chrom is fail because {error}")

@@ -12,6 +12,7 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 from Services.ChromaDBServices import ChromaBbServices
 class RAG_Embedding:
+    model = SentenceTransformer("all-MiniLM-L6-v2")
     #Constructure that recieve the files pdf support client to chank the pdf
     def __new__(cls,file : UploadFile |None = None , file_path: str | Path | None = None)->PdfReader:
         if (file_path is None):
@@ -75,14 +76,15 @@ class RAG_Embedding:
               inputs=chunks
          )
          logger.info(f"the embedding is ")
-    @staticmethod
-    def embedding_using_transfromes_model_encoding(chunks)->np.ndarray:
-         model = SentenceTransformer("all-MiniLM-L6-v2")
-         embedding = model.encode(chunks)
+         return embedding_batch_processing
+    @classmethod
+    def embedding_using_transfromes_model_encoding(cls,chunks)->list[float]:
+         embedding = cls.model.encode(chunks)
          logger.info(f"the type of the embedding is {type(embedding)}")
          logger.info(f"the content files is {embedding.shape}")
-         return embedding
+         return embedding.tolist()
     @staticmethod
-    def SaveInVectorDb(embeddings):
-         ChromaBbServices()
+    def SaveInVectorDb(vector,content,collection_name,id_client,copmany_name,name_cleint):
+        ChromaBbServices.savetheVector(vector,content,collection_name,id_client,copmany_name,name_cleint)
+        
          
