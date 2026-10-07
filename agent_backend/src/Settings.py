@@ -7,8 +7,11 @@ class Settings(BaseSettings):
     MISTRAL_AI_API_key:  str
     PORT_CHROMA_DB: int
     HOST_CHROMA_DB: str
+    API_KEY: str
+    TENANT: str
+    DATABASE:str
     model_config = SettingsConfigDict(env_file=BASE_DIR / ".env",env_file_encoding="utf-8")
-
+    
     @classmethod
     def load_env(cls)->"Settings":
         try:

@@ -11,10 +11,11 @@ class ChromaConnection:
     def __new__(cls, *args, **kwargs):
         if cls._instance is None:
             try:
-                client = chromadb.HttpClient(
-                    host=settings.HOST_CHROMA_DB,
-                    port=settings.PORT_CHROMA_DB
-                )
+                client = chromadb.CloudClient(
+  api_key=settings.API_KEY,
+  tenant=settings.TENANT,
+  database=settings.DATABASE
+)
 
                 client.heartbeat()
 
