@@ -14,6 +14,7 @@ dependencies = [
     { name = "dotenv" },
     { name = "fastapi" },
     { name = "jupyter" },
+    { name = "nbimporter" },
     { name = "notebook" },
     { name = "openai" },
     { name = "pydantic" },
@@ -24,6 +25,7 @@ requires-dist = [
     { name = "dotenv", specifier = ">=0.9.9" },
     { name = "fastapi", specifier = ">=0.142.2" },
     { name = "jupyter", specifier = ">=1.1.1" },
+    { name = "nbimporter", specifier = ">=0.3.4" },
     { name = "notebook", specifier = ">=7.6.3" },
     { name = "openai", specifier = ">=3.24.0" },
     { name = "pydantic", specifier = ">=2.13.5" },
@@ -1223,6 +1225,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/31/72/b3446efab8756e7df4b8ec587f8e611cb5a7249e4323db480802f1d3be04/nbformat-5.11.1.tar.gz", hash = "sha256:32d4521c68c6e7d5b29c76defaeed9f42ea733142b9b19f88277ce10390b9c4d", size = 147775, upload-time = "2026-08-17T08:10:51.942Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/1a/69/ee613f74085ca7103f79cd08d579c4f3177d1d26e5d3d9528d2d6536a707/nbformat-5.11.1-py3-none-any.whl", hash = "sha256:cc6698fa75f4fab8755ead786317815f13a6fee3b53311c0abb1a8b51d52f7ec", size = 79849, upload-time = "2026-08-17T08:10:50.18Z" },
+]
+
+[[package]]
+name = "nbimporter"
+version = "0.3.4"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/cc/37/fe36c6e8937bc36400126804fc4adb54b2ddc838e8f4bdbeafd6bb26205b/nbimporter-0.3.4.tar.gz", hash = "sha256:bc9bc803e7ba44ae9f7c6ec60cae2f4d1d509508feedd8c9e03a7949333bf16e", size = 4856, upload-time = "2021-03-08T10:40:40.029Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c4/fe/a85b96f9b362f206203be7aa7d811ada4abdfbba8892102c356d43ee90aa/nbimporter-0.3.4-py3-none-any.whl", hash = "sha256:14a4c37fd4a3e18ad5fba726d54f2e46b483dfe31c1f036682bb9ef259ab67a3", size = 4905, upload-time = "2021-03-08T10:40:38.84Z" },
 ]
 
 [[package]]

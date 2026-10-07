@@ -8,6 +8,7 @@ dependencies = [
     "dotenv>=0.9.9",
     "fastapi>=0.142.2",
     "jupyter>=1.1.1",
+    "nbimporter>=0.3.4",
     "notebook>=7.6.3",
     "openai>=3.24.0",
     "pydantic>=2.13.5",
