@@ -5,7 +5,7 @@ import uuid
 from loguru import logger
 import numpy as np
 
-from infrastructure.chromedb import chromaconnection
+from infrastructure.chromedb import chromaconnection,ChromaConnection
 
 chromaconnectiondb = chromaconnection
 class ChromaBbServices:
@@ -27,6 +27,8 @@ class ChromaBbServices:
     @classmethod
     def savetheVector(cls,collection_name :str,content:str , id_client : int , name_cleint : str , copmany_name : str,vector: np.ndarray):
         try:
+            client = ChromaConnection()
+            cls._instances = client
             if cls._instances is None:
                raise ConnectionError(
                    "chroma db connection failed"
@@ -47,10 +49,33 @@ class ChromaBbServices:
                 print("This content already exists")
                 return
             collection.add(
-                  ids = hashlib.sha256(content.encode()).hexdigest(),
-                  embedding = vector,
-                  metadata = [{"source": "pdf"}, {"source": "txt"} , {"client":id_client},{"name_client":name_cleint},{"company_name":copmany_name}]
-            )
+    ids=[hashlib.sha256(content.encode()).hexdigest()],
+    embeddings=[vector],
+    metadatas=[{
+        "source": "pdf",
+        "client": id_client,
+        "name_client": name_cleint,
+        "company_name": copmany_name
+    }],
+    documents=[content]
+)
         except Exception as error:
             logger.catch(f"the vector save in the chrom is fail because {error}")
+            raise
+    @classmethod
+    def check_data(cls,question:list):
+        try:
+            client = ChromaConnection()
+            collection = client.get_collection("rag-location")
+            data = collection.query(
+                query_embeddings=[question],
+                 n_results=3,
+                 include=["documents", "distances", "metadatas"]
+            )
+            for i, document in enumerate(data["documents"][0]):
+                print(f"\n--- Result {i + 1} ---")
+                print(document)
+    
+        except RuntimeError as error:
+            logger.catch(f"the erro is {error}")
             raise

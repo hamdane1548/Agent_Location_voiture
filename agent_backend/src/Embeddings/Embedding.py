@@ -85,6 +85,10 @@ class RAG_Embedding:
          return embedding.tolist()
     @staticmethod
     def SaveInVectorDb(vector,content,collection_name,id_client,copmany_name,name_cleint):
-        ChromaBbServices.savetheVector(vector,content,collection_name,id_client,copmany_name,name_cleint)
+        ChromaBbServices.savetheVector(collection_name,content,id_client,name_cleint,copmany_name,vector)
+    @staticmethod
+    def check_question(question:list):
+         ChromaBbServices.check_data(question)
+         
         
          
