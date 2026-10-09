@@ -5,7 +5,7 @@ import uuid
 from loguru import logger
 import numpy as np
 
-from infrastructure.chromedb import chromaconnection,ChromaConnection
+from src.infrastructure.chromedb import chromaconnection, ChromaConnection
 
 chromaconnectiondb = chromaconnection
 class ChromaBbServices:
@@ -63,7 +63,7 @@ class ChromaBbServices:
             logger.catch(f"the vector save in the chrom is fail because {error}")
             raise
     @classmethod
-    def check_data(cls,question:list):
+    def check_data(cls, question: list[float]) -> list[str]:
         try:
             client = ChromaConnection()
             collection = client.get_collection("rag-location")
@@ -72,9 +72,7 @@ class ChromaBbServices:
                  n_results=3,
                  include=["documents", "distances", "metadatas"]
             )
-            for i, document in enumerate(data["documents"][0]):
-                print(f"\n--- Result {i + 1} ---")
-                print(document)
+            return data["documents"][0]
     
         except RuntimeError as error:
             logger.catch(f"the erro is {error}")

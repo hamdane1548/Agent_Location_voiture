@@ -129,11 +129,16 @@ const Header = () => {
 
         <div className="w-auto relative h-full flex space-x-1 items-center">
 
-         <Logo bgcolor={"bg-black"} eyescolor={"bg-white"} width={"w-9"} height={"h-9"}></Logo>
+          <Logo bgcolor={"bg-black"} eyescolor={"bg-white"} width={"w-9"} height={"h-9"}></Logo>
 
-          <h1 className="primary text-[15px] tracking-tight font-bold">
-            Vox-Plot
-          </h1>
+          <div className="flex flex-col leading-tight">
+            <h1 className="primary text-[15px] tracking-tight font-bold">
+              Opoo
+            </h1>
+            <p className="primary text-[10px] text-gray-500">
+              Opoo Car Rental Assistant
+            </p>
+          </div>
         </div>
 
         <div className="w-auto h-full flex space-x-2 items-center">
