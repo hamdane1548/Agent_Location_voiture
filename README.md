@@ -1,4 +1,8 @@
-# Opoo Car Rental — Assistant de location
+
+[![Architecture diagram](https://gitdiagram.com/diagram-badge.svg)](https://gitdiagram.com/hamdane1548/agent_location_voiture?utm_source=readme&utm_medium=badge)
+
+[![Architecture diagram of hamdane1548/agent_location_voiture](https://gitdiagram.com/hamdane1548/agent_location_voiture/diagram.png)](https://gitdiagram.com/hamdane1548/agent_location_voiture?utm_source=readme&utm_medium=picture)
+
 
 Application composée d'une interface de chat React/Vite et d'une API FastAPI.
 L'assistant répond aux questions sur la location de voitures en s'appuyant sur
@@ -97,3 +101,14 @@ Pour lancer les tests du backend :
 cd agent_backend
 uv run pytest
 ```
+
+
+<p align="center">
+  <img
+    width="3716"
+    height="11605"
+    alt="xxxxxx"
+    src="https://github.com/user-attachments/assets/59883312-e51d-4cf0-a780-31982cd38119"
+  />
+</p>
+
