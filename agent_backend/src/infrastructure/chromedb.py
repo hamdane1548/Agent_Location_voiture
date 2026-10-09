@@ -1,6 +1,6 @@
 import chromadb
 from loguru import logger
-from Settings import Settings
+from src.Settings import Settings
 
 settings = Settings()
 

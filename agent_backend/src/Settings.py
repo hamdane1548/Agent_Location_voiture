@@ -5,6 +5,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 class Settings(BaseSettings):
     MISTRAL_AI_API_key:  str
+    LLM_API_KEY: str
     PORT_CHROMA_DB: int
     HOST_CHROMA_DB: str
     API_KEY: str

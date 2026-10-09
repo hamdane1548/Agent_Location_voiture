@@ -24,6 +24,63 @@
   font-family: 'Geist Mono', monospace;
 }
 
+.chat-welcome {
+  animation: chat-welcome-in 500ms ease-out both;
+}
+
+.chat-message-enter {
+  animation: chat-message-in 260ms ease-out both;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #9ca3af;
+  animation: typing-pulse 900ms ease-in-out infinite;
+}
+
+@keyframes chat-welcome-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes chat-message-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes typing-pulse {
+  0%, 60%, 100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-welcome,
+  .chat-message-enter,
+  .typing-dot {
+    animation: none;
+  }
+}
+
 .center {
     @apply flex items-center justify-center
 }

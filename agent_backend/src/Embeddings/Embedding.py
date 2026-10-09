@@ -10,7 +10,7 @@ from PyPDF2 import PdfReader
 from mistralai.client import Mistral
 import numpy as np
 from sentence_transformers import SentenceTransformer
-from Services.ChromaDBServices import ChromaBbServices
+from src.Services.ChromaDBServices import ChromaBbServices
 class RAG_Embedding:
     model = SentenceTransformer("all-MiniLM-L6-v2")
     #Constructure that recieve the files pdf support client to chank the pdf
@@ -87,8 +87,5 @@ class RAG_Embedding:
     def SaveInVectorDb(vector,content,collection_name,id_client,copmany_name,name_cleint):
         ChromaBbServices.savetheVector(collection_name,content,id_client,name_cleint,copmany_name,vector)
     @staticmethod
-    def check_question(question:list):
-         ChromaBbServices.check_data(question)
-         
-        
-         
+    def check_question(question: list[float]) -> list[str]:
+         return ChromaBbServices.check_data(question)
