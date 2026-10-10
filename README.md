@@ -3,6 +3,7 @@
 
 [![Architecture diagram of hamdane1548/agent_location_voiture](https://gitdiagram.com/hamdane1548/agent_location_voiture/diagram.png)](https://gitdiagram.com/hamdane1548/agent_location_voiture?utm_source=readme&utm_medium=picture)
 
+<img width="2142" height="1384" alt="image" src="https://github.com/user-attachments/assets/84dd61fd-8d7b-4374-8b5b-d0e668a1e018" />
 
 Application composée d'une interface de chat React/Vite et d'une API FastAPI.
 L'assistant répond aux questions sur la location de voitures en s'appuyant sur
