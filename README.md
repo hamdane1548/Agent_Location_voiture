@@ -113,3 +113,8 @@ uv run pytest
   />
 </p>
 
+
+## 👤 Author
+ 
+Built by **[@hamdane1548](https://github.com/hamdane1548)**.
+Built by **[@hamdane1548](https://github.com/senBenz)**.
